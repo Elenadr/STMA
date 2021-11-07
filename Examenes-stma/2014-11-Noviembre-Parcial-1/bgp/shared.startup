@@ -1,0 +1,12 @@
+#!/bin/bash
+
+HOST=`hostname`
+
+if [ -d /hostlab/${HOST} ]; then
+	mv /hostlab/${HOST} /hostlab/${HOST}.old
+fi
+
+echo "Restarting quagga daemon..."
+/etc/init.d/quagga start
+
+
